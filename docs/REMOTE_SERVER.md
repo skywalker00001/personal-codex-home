@@ -2,13 +2,15 @@
 
 本地安装提供指引和技能，不会让 Mac 自动获得共享盘、GPU、Kubernetes 凭据或服务器的 Codex 会话。
 
+当前默认选择：**Zenlayer 使用现有 VS Code Tunnel，AIS 使用 SSH**。统一入口为 [ais-remote-codex-setup](../skills/ais-remote-codex-setup/SKILL.md)，其中包含本地可执行的 Tunnel 客户端与 AIS 初始化工具。Zenlayer 最近实测 Tunnel 名称为 `h200-b32-master0`、实际 Pod 为 `avatar-c32-master-0`；使用前核实实际目标。
+
 ## 两种使用方式
 
 **在服务器运行 Codex。** Mac 通过 SSH、已有 VS Code Remote 或 Tunnel 接入服务器，在远程终端运行 Codex。执行工具和共享盘都在服务器，现有环境通常最容易复用。
 
-**在 Mac 运行 Codex，再通过 SSH 操作服务器。** 本地 Codex 负责代码与分析；需要查 `/aigc`、GPU、训练进程时，明确通过自己的 SSH 别名执行。SSH 连接和集群权限由用户另行配置，不从 Git 仓库下载私钥或 kubeconfig。
+**在 Mac 运行 Codex，再通过 Tunnel 操作 Zenlayer。** 本地 Codex 通过 skill 内的 `zenlayer_tunnel.cjs` 执行远程文件与命令任务；批量操作使用 session 复用连接。AIS 沿用自己的 SSH；SMC/Kubernetes 保留为 Zenlayer 的诊断备用路径。账号在本机授权，不从 Git 仓库下载私钥或 kubeconfig。
 
-例如在自己电脑的 SSH 配置中建立 `zenlayer-dev` 别名后，先做只读检查：
+若另行需要直接 SSH，可在自己电脑的 SSH 配置中建立 `zenlayer-dev` 别名后，先做只读检查：
 
 ```bash
 ssh zenlayer-dev 'hostname; uname -s; test -d /aigc/avatar/houyi && pwd'

@@ -49,11 +49,13 @@ codex
 | [docs/VERIFICATION.md](docs/VERIFICATION.md) | 已通过的检查，以及仍需在目标 Mac 验证的内容 |
 | [manifests/](manifests/) | 来源、版本与可校验的文件摘要 |
 
-## AIS 远程开发环境
+## AIS / Zenlayer 远程开发环境
 
-使用 [ais-remote-codex-setup](skills/ais-remote-codex-setup/SKILL.md)，从 Mac 经 SMC/PAM 与 Driver 连接 AIS，配置 VS Code Remote SSH，按原初始化入口增量恢复环境，并安装、登录和验证远端 Codex。附 Notebook SSH 启动模板、增量初始化与运行验证脚本。
+使用 [ais-remote-codex-setup](skills/ais-remote-codex-setup/SKILL.md)，从 Mac 经 SMC/PAM 与 Driver 连接 AIS，配置 VS Code Remote SSH、增量初始化及远端 Codex；Zenlayer 默认复用现有 VS Code Tunnel，附可执行的文件读取、命令与持久连接工具。
 
-换机时告诉 Codex：`用 $ais-remote-codex-setup 接入新 AIS，Driver IP 是……，Notebook IP 是……，用户是 work。` 首次 Notebook 公钥授权和个人账号验证可能需要交互；安装本仓库本身不会连接服务器或执行初始化。
+连接 Zenlayer 时可说：`用 $ais-remote-codex-setup 通过 Tunnel 查看 Zenlayer 的项目。`
+
+AIS 换机时告诉 Codex：`用 $ais-remote-codex-setup 接入新 AIS，Driver IP 是……，Notebook IP 是……，用户是 work。` 首次 Notebook 公钥授权和个人账号验证可能需要交互；安装本仓库本身不会连接服务器或执行初始化。
 
 ## 手机飞书控制自己的 Codex
 

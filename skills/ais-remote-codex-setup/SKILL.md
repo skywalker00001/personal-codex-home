@@ -1,15 +1,21 @@
 ---
 name: ais-remote-codex-setup
-description: 从 Mac 经 Shopee SMC/PAM 与 Driver 跳板接入新的或更换后的 AIS Notebook，配置 SSH、VS Code Remote SSH，增量恢复 Houyi 的 restart_all_commands 初始化并安装、登录、验证远端 Codex。用于 AIS 开发环境接入与恢复，不用于训练启动、GPU 清理或迁移正在运行的机器人。
+description: 从 Mac 连接 AIS 或 Zenlayer 并维护远端 Codex 开发环境：AIS 经 SMC/PAM 与 Driver 配置 SSH、VS Code 和增量初始化；Zenlayer 默认复用现有 VS Code Tunnel，支持远程文件和命令操作。不用于默认启动训练、清理 GPU 或重建机器人服务。
 ---
 
-# AIS 接入与 Codex 初始化
+# AIS / Zenlayer 远程开发与 Codex 配置
 
-目标是在 Mac 执行 `ssh ais`、VS Code 打开 AIS 工作目录，远端新终端能运行已登录且能加载个人 skills 的 Codex。先辨别当前工具运行在 Mac 还是 AIS；不得把服务器路径当成本机路径。
+目标是由 Mac 上的 Codex 按用户指定目标连接 AIS 或 Zenlayer，读写对应项目并执行已授权的远端任务。先辨别 Mac、AIS 和 Zenlayer；`/aigc/avatar/houyi` 属于 Zenlayer，AIS 初始化源在 `/home/work/houyi`，它们都不是 Mac 本地目录。
 
-用户要求配置新机器即授权本流程内必要的增量修改，不逐步重复索要确认。先检查实际状态，跳过已通过的阶段。仅需查看文件时直接 SSH 只读查看，不执行初始化。
+## 按目标选择入口
 
-## 入口与换机
+- **Zenlayer 默认使用现有 VS Code Tunnel。** 用户已选择该方式；读取 [Zenlayer Tunnel 接入](references/zenlayer-tunnel.md)，使用 `scripts/zenlayer_tunnel.cjs`。现有名称 `h200-b32-master0` 是历史名称，连接后以 `status` 返回的实际 hostname 为准。批量操作用 `session` 复用连接。不要先走 SMC；Tunnel 故障时可用 SMC → 跳板机 → kubectl 做必要的只读诊断，并说明原因。
+- **AIS 使用既有 SSH。** 已连通则复用 `ssh ais`；新建或更换 Notebook 时按下文恢复 SSH、增量初始化及 Codex。不要把 AIS 初始化脚本用于 Zenlayer。
+- 用户同时提两台机器时，把路径、命令和验收明确归到对应目标。仅检查或接入不自动授权训练、清理或重启已有服务。
+
+用户要求配置新机器即授权本流程内必要的增量修改，不逐步重复索要确认。先检查实际状态，跳过已通过的阶段。仅需查看文件时使用对应入口只读查看，不执行初始化。
+
+## AIS：入口与换机
 
 - 已连通：`ssh -o BatchMode=yes ais 'id; hostname; test -d /home/work/houyi && echo SHARED_HOME_OK'`。核实当前目标后继续远端阶段。
 - 新机器：取得真实 Driver IP、Notebook `hostname -I`、`whoami` 输出。历史地址只作诊断线索，不能替代新目标。
@@ -19,7 +25,7 @@ description: 从 Mac 经 Shopee SMC/PAM 与 Driver 跳板接入新的或更换�
 
 第一次接入若尚无 SSH，只需用户在 AIS 网页终端粘贴一次公钥/sshd 初始化段。SMC、AIS、Codex 的个人身份验证可能需浏览器交互；不能声称能跳过这些验证。
 
-## 远端增量初始化
+## AIS：远端增量初始化
 
 入口是 `/home/work/houyi/restart_commands/restart_all_commands.sh`。先读 [初始化映射与边界](references/incremental-init.md)，检查入口与三个子脚本当前内容；不要把原始私密内容输出到聊天或提交到 skill。
 
@@ -43,7 +49,7 @@ python3 "$AIS_SKILL_DIR/scripts/init_ais.py" --apply --packages --ais-login
 - AIS CLI 登录与数据集已挂载分别验收。原脚本内数据集 mount 示例全部被注释；没有新的明确目标时不恢复这些历史挂载。
 - 不运行 `restart_at_ais*.sh`，不启动 Cursor tunnel、GPU watchdog、训练或 `sleep infinity`。
 
-## Codex、个人配置与远端扩展
+## AIS：Codex、个人配置与远端扩展
 
 连接后读取 [远端 Codex 安装与验收](references/codex.md)。沿用现有版本与账号，缺失时用官方 standalone 安装器。个人配置仓库为 `https://github.com/skywalker00001/personal-codex-home.git`；使用 `personal-codex-profile` 的 dry-run/install 流程，保留现有配置、凭据及其他技能。
 
@@ -60,6 +66,6 @@ python3 "$AIS_SKILL_DIR/scripts/verify_codex.py" --require-skill personal-codex-
 
 ## 交付与日后调用
 
-交付当前主机、IP/端口、SSH/VS Code 结果、初始化各项状态、Codex 登录/skills 加载结果及未完成的实际挂载或用户验证。配置路径和备份位置写入机器自己的 `~/.ssh/ais-tools/setup.json` 或本地状态目录，技能本身不记录会变化的凭据。
+交付本次目标（AIS 或 Zenlayer）、实际主机、所用连接方式、IP/端口或 Tunnel 名称、SSH/VS Code 结果、初始化各项状态、Codex 登录/skills 加载结果及未完成的实际挂载或用户验证。配置路径和备份位置写入机器自己的 `~/.ssh/ais-tools/setup.json` 或本地状态目录，技能本身不记录会变化的凭据。
 
-日后用户可说：`用 $ais-remote-codex-setup 接入新 AIS，Driver 是 …，Notebook IP 是 …，用户是 work，按我的初始化流程补配置并验证 Codex。` 未给新 IP 时先查用户提供的当前 Notebook 信息。若仅查看现有 AIS 内容，直接复用已连通的 SSH。
+日后用户可说：`用 $ais-remote-codex-setup 接入新 AIS，Driver 是 …，Notebook IP 是 …，用户是 work，按我的初始化流程补配置并验证 Codex。` 未给新 IP 时先查用户提供的当前 Notebook 信息。若仅查看现有 AIS 内容，直接复用已连通的 SSH。日后用户说“查看 Zenlayer 的某个文件”或“在 Zenlayer 执行任务”，默认使用 Tunnel；可显式调用 `用 $ais-remote-codex-setup 通过 Tunnel 连接 Zenlayer 并查看 /aigc/avatar/houyi/...`。

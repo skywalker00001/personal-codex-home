@@ -135,12 +135,12 @@
     },
     {
       "source": "mac-local-skills/ais-remote-codex-setup/SKILL.md",
-      "source_sha256": "ff313ae2fbddb448f43280470520c0d2be43dfe0738da91b17d1177680dfc220",
+      "source_sha256": "4b3b08da35647e96eb2d13651c48cf2f7dffb5a5ec9a38e5df0dae0dc51bbc02",
       "destination": "skills/ais-remote-codex-setup/SKILL.md"
     },
     {
       "source": "mac-local-skills/ais-remote-codex-setup/agents/openai.yaml",
-      "source_sha256": "7688097c202546270f560eb4f63a380f9f9440845e2c97da4279f7320b6220fd",
+      "source_sha256": "72a4d0299cabf2da3e1f75657faed92ea475e40d0d8e3ffaeb5451ffed4ced80",
       "destination": "skills/ais-remote-codex-setup/agents/openai.yaml"
     },
     {
@@ -155,7 +155,7 @@
     },
     {
       "source": "mac-local-skills/ais-remote-codex-setup/references/codex.md",
-      "source_sha256": "58d60f56b0db18078cd24f6b44ea19ab9c07cf1bce5adaac85783b8464072c9b",
+      "source_sha256": "c9d9a64f9ff31c59d3f8d0cc7d4ba848b487bbff1e65896f524a7c1d43c28036",
       "destination": "skills/ais-remote-codex-setup/references/codex.md"
     },
     {
@@ -182,6 +182,21 @@
       "source": "mac-local-skills/ais-remote-codex-setup/scripts/verify_codex.py",
       "source_sha256": "0cb4536e4fee524a94c873f92e648417fb555272a1df57aac3ae90bbe8b0edb1",
       "destination": "skills/ais-remote-codex-setup/scripts/verify_codex.py"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/references/zenlayer-tunnel.md",
+      "source_sha256": "59c08bab6e05c04634ed54bc3f45db55e691efe841edb7de9801af8722b0ad9c",
+      "destination": "skills/ais-remote-codex-setup/references/zenlayer-tunnel.md"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/scripts/tunnel_client_library.cjs",
+      "source_sha256": "a456178696cf8281a630cb52a78a47d512ad6cb0dd30b5456e1e851ed7707666",
+      "destination": "skills/ais-remote-codex-setup/scripts/tunnel_client_library.cjs"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/scripts/zenlayer_tunnel.cjs",
+      "source_sha256": "2181d69e5baaf8d97b21351e68e4494da78f45785088ae9a264920e4be0a46fd",
+      "destination": "skills/ais-remote-codex-setup/scripts/zenlayer_tunnel.cjs"
     }
   ],
   "normalizations": [
@@ -190,7 +205,8 @@
     "legacy explicit-only selection preserved",
     "Linux context marked",
     "transcript recovery scoped to confirmed Home",
-    "AIS skill commands resolve repository or standalone installation paths"
+    "AIS skill commands resolve repository or standalone installation paths",
+    "Zenlayer uses the existing Tunnel by default; portable client loads the installed Remote Tunnels extension"
   ],
   "privacy": "No live Codex state, credentials, raw memories or transcripts exported."
 }
