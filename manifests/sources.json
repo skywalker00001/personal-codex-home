@@ -1,7 +1,7 @@
 {
   "exported_on": "2026-11-16",
   "source_custom_skills": 14,
-  "new_skills": 2,
+  "new_skills": 3,
   "source_files": [
     {
       "source": "custom-skills/autonomous-training-delivery/SKILL.md",
@@ -132,6 +132,56 @@
       "source": "clawbot-deployment/clawbot-feishu-deploy-20261113.tar.gz",
       "source_sha256": "552e3e73bd2353595ca352a52ffaeb1fe9e953bdab7f9e5779dd0312bc537155",
       "destination": "skills/clawbot-feishu-deploy/assets/clawbot-feishu-deploy-20261113.tar.gz"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/SKILL.md",
+      "source_sha256": "ff313ae2fbddb448f43280470520c0d2be43dfe0738da91b17d1177680dfc220",
+      "destination": "skills/ais-remote-codex-setup/SKILL.md"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/agents/openai.yaml",
+      "source_sha256": "7688097c202546270f560eb4f63a380f9f9440845e2c97da4279f7320b6220fd",
+      "destination": "skills/ais-remote-codex-setup/agents/openai.yaml"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/assets/notebook_sshd.sh",
+      "source_sha256": "7ddc89dc182eb62e74f77776898682ea6a7b0ba1df4fa167a76c99f8d178d0eb",
+      "destination": "skills/ais-remote-codex-setup/assets/notebook_sshd.sh"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/assets/pam_ssh_wrapper.py",
+      "source_sha256": "60d6155883cd9f8086a7f906018052ce7af7630c1dfa139b0a7a2dbe90260370",
+      "destination": "skills/ais-remote-codex-setup/assets/pam_ssh_wrapper.py"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/references/codex.md",
+      "source_sha256": "58d60f56b0db18078cd24f6b44ea19ab9c07cf1bce5adaac85783b8464072c9b",
+      "destination": "skills/ais-remote-codex-setup/references/codex.md"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/references/incremental-init.md",
+      "source_sha256": "e888c59724283fc2e50f60f37aee8d1d5873f01188785e7611e80ee72c160344",
+      "destination": "skills/ais-remote-codex-setup/references/incremental-init.md"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/references/ssh-and-vscode.md",
+      "source_sha256": "7667f9e4375a3c1ac459a5a130d67406c114c4e369d46c732218b0bd4b2e7348",
+      "destination": "skills/ais-remote-codex-setup/references/ssh-and-vscode.md"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/scripts/init_ais.py",
+      "source_sha256": "c6c7a5bc946b74c43a8ed7fa5dfaf5733aa54ed200351cf0f227f914fec8f9a4",
+      "destination": "skills/ais-remote-codex-setup/scripts/init_ais.py"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/scripts/render_notebook_bootstrap.py",
+      "source_sha256": "011f8f3b642bc97d05c83da70af1a9ea2bd926ab7849a23629ad8209531b426c",
+      "destination": "skills/ais-remote-codex-setup/scripts/render_notebook_bootstrap.py"
+    },
+    {
+      "source": "mac-local-skills/ais-remote-codex-setup/scripts/verify_codex.py",
+      "source_sha256": "0cb4536e4fee524a94c873f92e648417fb555272a1df57aac3ae90bbe8b0edb1",
+      "destination": "skills/ais-remote-codex-setup/scripts/verify_codex.py"
     }
   ],
   "normalizations": [
@@ -139,7 +189,8 @@
     "legacy fields preserved as metadata",
     "legacy explicit-only selection preserved",
     "Linux context marked",
-    "transcript recovery scoped to confirmed Home"
+    "transcript recovery scoped to confirmed Home",
+    "AIS skill commands resolve repository or standalone installation paths"
   ],
   "privacy": "No live Codex state, credentials, raw memories or transcripts exported."
 }

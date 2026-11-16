@@ -38,7 +38,7 @@ codex
 
 | 目录 | 用途 |
 | --- | --- |
-| [skills/](skills/) | 原有 14 个自定义技能，以及飞书独立部署、配置迁移两个新技能 |
+| [skills/](skills/) | 17 个技能，涵盖训练、飞书部署、个人配置迁移与 AIS 远程接入 |
 | [AGENTS.md](AGENTS.md) | 中文协作偏好、实验证据与通知习惯 |
 | [config/config.toml](config/config.toml) | 最少的可迁移默认配置 |
 | [knowledge/](knowledge/) | 精选项目背景，区分不同实验协议 |
@@ -48,6 +48,12 @@ codex
 | [docs/EXPORT.md](docs/EXPORT.md) | 本次导出范围、兼容性处理及遗漏说明 |
 | [docs/VERIFICATION.md](docs/VERIFICATION.md) | 已通过的检查，以及仍需在目标 Mac 验证的内容 |
 | [manifests/](manifests/) | 来源、版本与可校验的文件摘要 |
+
+## AIS 远程开发环境
+
+使用 [ais-remote-codex-setup](skills/ais-remote-codex-setup/SKILL.md)，从 Mac 经 SMC/PAM 与 Driver 连接 AIS，配置 VS Code Remote SSH，按原初始化入口增量恢复环境，并安装、登录和验证远端 Codex。附 Notebook SSH 启动模板、增量初始化与运行验证脚本。
+
+换机时告诉 Codex：`用 $ais-remote-codex-setup 接入新 AIS，Driver IP 是……，Notebook IP 是……，用户是 work。` 首次 Notebook 公钥授权和个人账号验证可能需要交互；安装本仓库本身不会连接服务器或执行初始化。
 
 ## 手机飞书控制自己的 Codex
 

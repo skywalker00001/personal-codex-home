@@ -19,9 +19,12 @@
 | [houyi-video-publish-verify](../skills/houyi-video-publish-verify/SKILL.md) | Publish a completed Houyi video directory through an existing file server/Cloudflare path and prove browser-seekable playback with HTTP Range, not only HTTP 200. | 显式调用 |
 | [longlive-stage1-export-validation](../skills/longlive-stage1-export-validation/SKILL.md) | Export a LongLive or LongCat stage-1 AR sharded checkpoint to a native generator directory and validate it efficiently, especially when the user wants fast T2V/I2V checkpoint verification without disturbing the active training pod. | 自动匹配 / 显式调用 |
 | [clawbot-feishu-deploy](../skills/clawbot-feishu-deploy/SKILL.md) | 新用户在自己的 Linux 上部署手机飞书 Codex，附指南与源码包 | 自动匹配 / 显式调用 |
+| [ais-remote-codex-setup](../skills/ais-remote-codex-setup/SKILL.md) | Mac 经 SMC/PAM 连接新 AIS，增量初始化并配置远端 Codex | 自动匹配 / 显式调用 |
 | [personal-codex-profile](../skills/personal-codex-profile/SKILL.md) | 安装、迁移和维护本个人配置仓库 | 自动匹配 / 显式调用 |
 
 ## 运行依赖
+
+- `ais-remote-codex-setup`：Mac 的 Python、SSH、SMC/PAM 与 VS Code Remote SSH；AIS 的 `work` 用户、sudo 和持久化 `/home/work/houyi` 初始化来源。凭据留在各自机器，按需交互授权。
 
 - `personal-codex-profile` 与安装器：本地 Git、Python 3.9+。
 - `clawbot-feishu-deploy`：自己的 Linux、Python 3.10+、tmux、Codex 登录、飞书应用；包内依赖按部署指南安装。
