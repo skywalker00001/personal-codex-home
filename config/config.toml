@@ -1,0 +1,7 @@
+# Portable defaults from Houyi's server, reviewed 2026-11-16.
+# Change model if your account does not provide this model.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "xhigh"
+
+# Permissions use the installed Codex client's defaults. Choose them locally.
+# Server project trust, credentials, MCP secrets and experimental flags are omitted.

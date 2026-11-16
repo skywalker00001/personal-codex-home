@@ -1,0 +1,145 @@
+{
+  "exported_on": "2026-11-16",
+  "source_custom_skills": 14,
+  "new_skills": 2,
+  "source_files": [
+    {
+      "source": "custom-skills/autonomous-training-delivery/SKILL.md",
+      "source_sha256": "e82af5507413c0bd410593c84efc9fec0de1e53ca4c84146e8b8a9d3eb240b85",
+      "destination": "skills/autonomous-training-delivery/SKILL.md"
+    },
+    {
+      "source": "custom-skills/clawbot/SKILL.md",
+      "source_sha256": "1294c6730be7e17228dd1c0e13cbc868bba376f99ef8fd0d4846fd9f6ba37465",
+      "destination": "skills/clawbot/SKILL.md"
+    },
+    {
+      "source": "custom-skills/clawbot/agents/openai.yaml",
+      "source_sha256": "cea322956388d00648f973da8694cc29a3419fbe51cbd77eb35f0599343d542b",
+      "destination": "skills/clawbot/agents/openai.yaml"
+    },
+    {
+      "source": "custom-skills/clawbot/references/interface.md",
+      "source_sha256": "11f93795c30a7073ef806ad69d407e0719586fdf0ed1521be4220af4a66ad262",
+      "destination": "skills/clawbot/references/interface.md"
+    },
+    {
+      "source": "custom-skills/clawbot/references/maintenance.md",
+      "source_sha256": "4098388d9a60bd7a67f0a7e7dad54697cc93f9126259c3cb7bdf0dc5925590d8",
+      "destination": "skills/clawbot/references/maintenance.md"
+    },
+    {
+      "source": "custom-skills/clawbot/references/setup.md",
+      "source_sha256": "1b0a00f62c0231ed671f2cabb40a533b1f479aacd4b63489ec4dffdc20679561",
+      "destination": "skills/clawbot/references/setup.md"
+    },
+    {
+      "source": "custom-skills/houyi-workspace-migration/SKILL.md",
+      "source_sha256": "de8ddaef4fb9c4f86381b5c1c351f0155cc5cd9da6ba4fc6e2a68fcc595c64d0",
+      "destination": "skills/houyi-workspace-migration/SKILL.md"
+    },
+    {
+      "source": "custom-skills/houyi-workspace-migration/agents/openai.yaml",
+      "source_sha256": "85146dc5c68b2ea1a8acafa189fe2c8a30ea3555b73aaff0a1431db3d83c1890",
+      "destination": "skills/houyi-workspace-migration/agents/openai.yaml"
+    },
+    {
+      "source": "custom-skills/houyi-workspace-migration/scripts/prepare_target.py",
+      "source_sha256": "df35704621befcbbc4d5431ecdd25e4c5311cd850e4ac7359519107d0b00159d",
+      "destination": "skills/houyi-workspace-migration/scripts/prepare_target.py"
+    },
+    {
+      "source": "custom-skills/video-timestep-evaluation/SKILL.md",
+      "source_sha256": "99e0c254809a13f6b9de2b8d3d80f8011bd0cec0d2ef383f720e4d6882f9d530",
+      "destination": "skills/video-timestep-evaluation/SKILL.md"
+    },
+    {
+      "source": "custom-skills/video-timestep-evaluation/agents/openai.yaml",
+      "source_sha256": "ff6b626b8e19787fd233ecd22bd13137d10dbf82b4110e9d12d781894aa59eca",
+      "destination": "skills/video-timestep-evaluation/agents/openai.yaml"
+    },
+    {
+      "source": "custom-skills/video-timestep-evaluation/references/candidate-design.md",
+      "source_sha256": "8379c7190c9b078689e468d8a6f22dc25c5c8922eb6411804570a7faaf809d24",
+      "destination": "skills/video-timestep-evaluation/references/candidate-design.md"
+    },
+    {
+      "source": "custom-skills/video-timestep-evaluation/references/execution-and-publishing.md",
+      "source_sha256": "4cf0690954edd7e4de619d26883ab6652389cf977b8953f0f127fd16e4383e58",
+      "destination": "skills/video-timestep-evaluation/references/execution-and-publishing.md"
+    },
+    {
+      "source": "custom-skills/video-timestep-evaluation/使用前信息清单.md",
+      "source_sha256": "c3b6ab6256422a11a7497b8eb925ebff5a3d76bd4637c7a250d75d81667c7ca3",
+      "destination": "skills/video-timestep-evaluation/使用前信息清单.md"
+    },
+    {
+      "source": "custom-skills/wan-h200-sft-sop/SKILL.md",
+      "source_sha256": "cfb7acf2609b0a939ce01d9f63970fddd35dc9003dd491923149d85e54753952",
+      "destination": "skills/wan-h200-sft-sop/SKILL.md"
+    },
+    {
+      "source": "experience-skills/codex-transcript-recovery/SKILL.md",
+      "source_sha256": "bc35d2ea4ab34f972d80115f237a11b5d8c4e9d2356546d9dbfb16641ef52a09",
+      "destination": "skills/codex-transcript-recovery/SKILL.md"
+    },
+    {
+      "source": "experience-skills/codex-vscode-remote-extension-activation/SKILL.md",
+      "source_sha256": "ba841b570612a6107bf18b543bc6e71ef81355b2ba331fa34fc3a119339737f6",
+      "destination": "skills/codex-vscode-remote-extension-activation/SKILL.md"
+    },
+    {
+      "source": "experience-skills/codex-writer-lock-audit/SKILL.md",
+      "source_sha256": "b6051e1d58727fc774d35ac4e322c418c293a5316cb497eac6bd056dfda4b083",
+      "destination": "skills/codex-writer-lock-audit/SKILL.md"
+    },
+    {
+      "source": "experience-skills/h3-performer-training-delivery/SKILL.md",
+      "source_sha256": "17ab6df147d13a048530d97b082995c073bc60d6206fe692fcabf82edb3961df",
+      "destination": "skills/h3-performer-training-delivery/SKILL.md"
+    },
+    {
+      "source": "experience-skills/helios-hy-exp-status-check/SKILL.md",
+      "source_sha256": "a755957bd1f438aaeb278c6138007be81b68acaf8d565a7e47c8d10381aab511",
+      "destination": "skills/helios-hy-exp-status-check/SKILL.md"
+    },
+    {
+      "source": "experience-skills/helios-transformer-distill-diff/SKILL.md",
+      "source_sha256": "fb07dc98ade1f695f231808a357b72ced94ed3eaa29cf96d4fc0474a4c7b09fc",
+      "destination": "skills/helios-transformer-distill-diff/SKILL.md"
+    },
+    {
+      "source": "experience-skills/houyi-gpu-stop-and-verify/SKILL.md",
+      "source_sha256": "56a56172d15e534db7a8b3cbe6595c5ed15a3671b3ecb3adfa100af1f9e333b6",
+      "destination": "skills/houyi-gpu-stop-and-verify/SKILL.md"
+    },
+    {
+      "source": "experience-skills/houyi-video-publish-verify/SKILL.md",
+      "source_sha256": "0faf9e4eec2070ce0d0a0e668ac3eb211f64af6cd9e69b166597dff9f08bbc40",
+      "destination": "skills/houyi-video-publish-verify/SKILL.md"
+    },
+    {
+      "source": "experience-skills/longlive-stage1-export-validation/SKILL.md",
+      "source_sha256": "52fe6507ca4d6d21323bf4917385e61faccdc99b6e097f292643e0faf01ac37f",
+      "destination": "skills/longlive-stage1-export-validation/SKILL.md"
+    },
+    {
+      "source": "clawbot-deployment/FEISHU_CODEX_DEPLOY.md",
+      "source_sha256": "7114b91bb46da4fd5b8fda3822bc2cfab4bcaa761e6b022bd6a4be9719dbf6b1",
+      "destination": "skills/clawbot-feishu-deploy/references/FEISHU_CODEX_DEPLOY.md"
+    },
+    {
+      "source": "clawbot-deployment/clawbot-feishu-deploy-20261113.tar.gz",
+      "source_sha256": "552e3e73bd2353595ca352a52ffaeb1fe9e953bdab7f9e5779dd0312bc537155",
+      "destination": "skills/clawbot-feishu-deploy/assets/clawbot-feishu-deploy-20261113.tar.gz"
+    }
+  ],
+  "normalizations": [
+    "YAML descriptions quoted",
+    "legacy fields preserved as metadata",
+    "legacy explicit-only selection preserved",
+    "Linux context marked",
+    "transcript recovery scoped to confirmed Home"
+  ],
+  "privacy": "No live Codex state, credentials, raw memories or transcripts exported."
+}

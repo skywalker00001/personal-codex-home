@@ -1,0 +1,4 @@
+interface:
+  display_name: "Houyi 工作环境迁移恢复"
+  short_description: "恢复共享盘上的 VS Code、Codex、微信飞书机器人及网页隧道服务"
+  default_prompt: "使用 $houyi-workspace-migration，在当前新机器恢复 Houyi 的原 VS Code Tunnel、Codex 会话、一个微信和一个飞书机器人，以及网页和 Cloudflare 隧道。"

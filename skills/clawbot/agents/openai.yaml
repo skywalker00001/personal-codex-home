@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clawbot 飞书与微信机器人"
+  short_description: "创建和维护 Houyi 飞书与微信 Codex 机器人，涵盖原生布局、会话与排障"
+  default_prompt: "使用 $clawbot 检查并维护当前飞书和微信 Codex 机器人，沿用已有绑定、会话和界面约定。"
